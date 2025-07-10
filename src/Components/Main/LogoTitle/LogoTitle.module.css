@@ -1,0 +1,11 @@
+.logo img {
+  height: 169px;
+  width: 169px;
+  cursor: pointer;
+  border: 5px solid #1b2c64;
+  background-color: #2454f3;
+  border-radius: 160px;
+}
+.logo img:hover {
+  transform: scale(1.2);
+}
