@@ -1,11 +1,8 @@
-import React from "react";
 import HeaderStyle from "./Header.module.css";
 import Button from "../UI/Button/Button";
-const Header = ({ isRight, setIsRight }) => {
-  const logoutHandler = () => {
-    setIsRight(false);
-    localStorage.removeItem("SaveState");
-  };
+import { useAuth } from "../auth-context/auth-context";
+const Header = () => {
+  const { logoutHandler, isRight } = useAuth();
   return (
     <div className={HeaderStyle.header}>
       <div>

@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import FormStyle from "./Form.module.css";
 import Card from "../../UI/Card/Card";
 import CardStyle from "../../UI/Card/Card.module.css";
-const Form = ({ userDataHandler }) => {
+import { useAuth } from "../../auth-context/auth-context";
+const Form = () => {
+  // const ctx = useContext(AuthContext);
+  const { userDataHandler } = useAuth();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isValid, setIsValid] = useState(true);
@@ -30,6 +33,7 @@ const Form = ({ userDataHandler }) => {
       return;
     }
     userDataHandler(userData);
+    console.log(userDataHandler(userData), "TESTING");
 
     // CLEANER
     setUsername("");
